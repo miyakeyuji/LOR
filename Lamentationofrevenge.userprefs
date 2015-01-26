@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lamentationofrevenge\ADVPart.cs">
+    <Files>
+      <File FileName="Lamentationofrevenge\CommandPerser.cs" Line="13" Column="4" />
+      <File FileName="Lamentationofrevenge\Novel.cs" Line="162" Column="2" />
+      <File FileName="Lamentationofrevenge\ADVPart.cs" Line="26" Column="27" />
+      <File FileName="Lamentationofrevenge\BaseScene.cs" Line="25" Column="45" />
+      <File FileName="Lamentationofrevenge\DeliveryLetter.cs" Line="126" Column="47" />
+      <File FileName="Lamentationofrevenge\AppMain.cs" Line="74" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Lamentationofrevenge" expanded="True">
+            <Node name="data" expanded="True">
+              <Node name="letter" expanded="True" />
+            </Node>
+            <Node name="ADVPart.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

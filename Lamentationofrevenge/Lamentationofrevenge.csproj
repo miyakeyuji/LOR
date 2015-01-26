@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EFDC34A-9C4C-4902-8194-5230761076E7}</ProjectGuid>
+    <ProjectTypeGuids>{69878862-DA7D-4DC6-B0A1-50D8FAB4242F};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lamentationofrevenge</RootNamespace>
+    <AssemblyName>Lamentationofrevenge</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Sce.PlayStation.Core" />
+    <Reference Include="Sce.PlayStation.HighLevel.GameEngine2D" />
+    <Reference Include="Sce.PlayStation.HighLevel.UI" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppMain.cs" />
+    <Compile Include="CommandPerser.cs" />
+    <Compile Include="Novel.cs" />
+    <Compile Include="DeliveryLetter.cs" />
+    <Compile Include="NameInput.cs" />
+    <Compile Include="BackLog.cs" />
+    <Compile Include="DataContorol.cs" />
+    <Compile Include="Charactor.cs" />
+    <Compile Include="SearchRoompart.cs" />
+    <Compile Include="BaseScene.cs" />
+    <Compile Include="OptionPart.cs" />
+    <Compile Include="TitlePart.cs" />
+    <Compile Include="ADVPart.cs" />
+    <Compile Include="GalleryPart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ShaderProgram Include="shaders\Simple.fcg" />
+    <ShaderProgram Include="shaders\Simple.vcg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PsmMetadata Include="app.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Sce\Sce.Psm.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="data\chara\" />
+    <Folder Include="data\bgm\" />
+    <Folder Include="data\bgg\" />
+    <Folder Include="data\logo\" />
+    <Folder Include="data\ui\" />
+    <Folder Include="data\font\" />
+    <Folder Include="data\letter\" />
+    <Folder Include="data\title\" />
+    <Folder Include="data\text\" />
+    <Folder Include="data\systemdata\" />
+    <Folder Include="data\still\" />
+    <Folder Include="data\se\" />
+    <Folder Include="data\chara\arufured\" />
+    <Folder Include="data\chara\brendan\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\bgg\steps_even.jpg" />
+    <Content Include="data\bgg\steps_night.jpg" />
+    <Content Include="data\bgg\player_room_even.jpg" />
+    <Content Include="data\bgg\player_room_night.jpg" />
+    <Content Include="data\bgg\yard_even.jpg" />
+    <Content Include="data\bgg\yard_night.jpg" />
+    <Content Include="data\bgg\passageway_even.jpg" />
+    <Content Include="data\bgg\passageway_night.jpg" />
+    <Content Include="data\bgm\ED.mp3" />
+    <Content Include="data\bgm\house.mp3" />
+    <Content Include="data\bgm\love.mp3" />
+    <Content Include="data\bgm\serious.mp3" />
+    <Content Include="data\bgm\title.mp3" />
+    <Content Include="data\bgm\main_theme.mp3" />
+    <Content Include="data\bgm\main_theme_PianoArange.mp3" />
+    <Content Include="data\bgg\lewis_room_even.jpg" />
+    <Content Include="data\bgg\hubert_room_niget.jpg" />
+    <Content Include="data\bgg\hubert_room_even.jpg" />
+    <Content Include="data\bgg\alfred_room_night.jpg" />
+    <Content Include="data\bgg\alfred_room_even.jpg" />
+    <Content Include="data\bgg\lewis_room_night.jpg" />
+    <Content Include="data\letter\aruhuletter.png" />
+    <Content Include="data\letter\aruhuSD.png" />
+    <Content Include="data\letter\box.png" />
+    <Content Include="data\letter\failure.png" />
+    <Content Include="data\letter\guhiwaku.png" />
+    <Content Include="data\letter\hubartletter.png" />
+    <Content Include="data\letter\hubartSD.png" />
+    <Content Include="data\letter\player_room.jpg" />
+    <Content Include="data\letter\ruisuletter.png" />
+    <Content Include="data\letter\ruisuSD.png" />
+    <Content Include="data\letter\selecting.png" />
+    <Content Include="data\letter\success.png" />
+    <Content Include="data\letter\time.png" />
+    <Content Include="data\letter\yazirushi.png" />
+  </ItemGroup>
+</Project>
