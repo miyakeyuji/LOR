@@ -120,26 +120,12 @@ namespace Lamentationofrevenge
 		
 		public override void AddGraphic (string dataPass, Vector2 position)
 		{
-			Camera.SetViewFromViewport();
-				
-			var texture = new Texture2D(dataPass,false);
-			var textureInfo = new TextureInfo(texture);
-			
-			var sprite = new SpriteUV(){TextureInfo = textureInfo};
-		
-			sprite.Quad.S = textureInfo.TextureSizef;
-			
-			sprite.CenterSprite();
-			
-			sprite.Position = position;
-			
-			AddChild(sprite);
-
+			base.AddGraphic(dataPass,position);
 		}
 		
 		public int GetRandom(){ return _rand.Next(0,3);	}
 		
-		public override void ContorolSound(string dataPass)
+		public override void ContorolSound()
 		{
 			
 		}

@@ -35,15 +35,21 @@ namespace Lamentationofrevenge
 		private int _currentLineNum;
 		private int _fontSize;
 		
-		private string[] _folderPass =　{　"/Application/date/",　};
+		private string[] _folderPass =　{　"/Application/data/",　};
+		private string[] _folderType = {
+			"text/",
+			"ui/",
+			"namewindow/",
+			"chara/",
+		};
 		private string[] _nameWindowData =　{　"namewindow.png",　};
 		private string[] _textWindowData =　{　"textwindow.png",　};
 
 		private string[] _textPass =
 		{
-			"/Application/date/TypeAlpha/tutorialtext.txt",
-			"/Application/date/TypeAlpha/text/selecttest.txt",
-			"/Application/date/TypeAlpha/text/prologue.txt",
+			"/Application/data/text/tutorialtext.txt",
+			"/Application/data/text/selecttest.txt",
+			"/Application/data/text/prologue.txt",
 		};
 		
 		enum _playMode
@@ -96,13 +102,12 @@ namespace Lamentationofrevenge
 		private Font[] _fonts = new Font[]
 		{
 			new Font(FontAlias.System,25,FontStyle.Regular),
-			new Font("/Application/date/GenJyuuGothic-P-Normal.ttf",35,FontStyle.Regular),
+			new Font("/Application/data/font/GenJyuuGothic-P-Normal.ttf",35,FontStyle.Regular),
 		};
-		
 		
 		public ADVPart ()
 		{			
-			_novel = new Novel(_textPass[2]);
+			_novel = new Novel(_textPass[0]);
 			Initialize();
 			_useBgm = "";
 			_bgm = null;
@@ -111,8 +116,9 @@ namespace Lamentationofrevenge
 		public override void Initialize ()
 		{
 			_displayCharaList = new List<string>();
+			_displayMaterialList = new List<string>();
+			
 			_commandSeq = _novel.Execute().GetEnumerator();
-			_commandSeq.MoveNext();
 			
 			_currentWordNum = 0;
 			_currentLineNum = 0;
@@ -120,12 +126,14 @@ namespace Lamentationofrevenge
 			
 			_playType = 0;
 			//_nowMode = (int)_modeList.Normal;
+			GoNext();
 			
-			AddScene();		
 		}
 		
 		public override void AddGraphic(string dataPass , Vector2 position)
 		{
+			if(dataPass.Last() == '/' ||
+			   dataPass.IndexOf("/.") > 0)return;
 			base.AddGraphic(dataPass,position);
 		}
 		
@@ -190,14 +198,92 @@ namespace Lamentationofrevenge
 		
 		private void AddScene()
 		{
-			if(_displayMaterialList[0] == "/Application/date/TypeAlpha/" || 
-			   _displayMaterialList[0] == "/Application/date/TypeAlpha/.jpg" ||
-			   _displayMaterialList[0] == "/Application/date/TypeAlpha/.png"
-			   )AddGraphic(_displayMaterialList[0] , _graphicPosition[0]);
+			AddGraphic(_folderPass[0] + _novel.BackGroundGraphicPass(),_graphicPosition[0]);
 			
+			if(_displayCharaList.Count == 1)
+			{
+				AddGraphic(_folderPass[0] + _folderType[3] + _displayCharaList[0],_graphicPosition[1]);
+			}	
+			if(_displayCharaList.Count == 2)
+			{
+				AddGraphic(_folderPass[0] + _folderType[3] + _displayCharaList[0],_graphicPosition[2]);
+				AddGraphic(_folderPass[0] + _folderType[3] + _displayCharaList[1],_graphicPosition[3]);
+			}	
+			if(_displayCharaList.Count == 3)
+			{
+				AddGraphic(_folderPass[0] + _folderType[3] + _displayCharaList[0],_graphicPosition[2]);
+				AddGraphic(_folderPass[0] + _folderType[3] + _displayCharaList[1],_graphicPosition[3]);
+				AddGraphic(_folderPass[0] + _folderType[3] + _displayCharaList[2],_graphicPosition[1]);
+			}	
 			
+			//キャラごとにwindowの色を変更
+			AddGraphic(_folderPass[0] + _folderType[1] + _textWindowData[0],_graphicPosition[4]);
+			NameWindowChange();
+
+			if(_novel.Name() != null)
+			{
+				_displayName = _novel.Name();
+				ConvertToImage(_novel.Name(),200,300,1110,475);
+			}
+			
+			if(_novel.Message() != null)_text = _novel.Message();
+			if(_novel.Message() == null)_text = "";
+			if(_novel.SelectMessage() != null) _selectText = _novel.SelectMessage();
+			if(_novel.SelectID() == 2)
+			{
+				if(_novel.SelectMessageIndex() == 2)
+				{
+				}
+				if(_novel.SelectMessageIndex() == 3)
+				{
+				}
+			}
+		}
+
+		public void NameWindowChange()
+		{
+			var pass = _folderPass[0] + _folderType[2];
+			if(_novel.Name() == "アルフレッド"){AddGraphic(pass + "aruhured.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "ルイス"){AddGraphic(pass + "ruisuname.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "ヒューバート"){AddGraphic(pass + "hubartname.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "マチルダ"){AddGraphic(pass + "matirudaname.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "エイブラム"){AddGraphic(pass + "eibram.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "当主"){AddGraphic(pass + "brendan.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "ドロシア"){AddGraphic(pass + "drosia.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "ラティアス"){AddGraphic(pass + "radeisuname.png",_graphicPosition[5]);return;}
+			if(_novel.Name() == "主人公"){AddGraphic(pass + "playername.png",_graphicPosition[5]);return;}
+			AddGraphic(pass + "namewindow.png",_graphicPosition[5]);
 		}
 		
+		public void EmotionChange()
+		{
+			int count = 0;
+			foreach(string name in _displayCharaList.ToList())
+			{
+				if(name == DisplayCharaCheck(_novel.Name()) +  _novel.CharaGraphicPass())
+				{
+					_displayCharaList[count] = DisplayCharaCheck(_novel.Name()) +  _novel.CharaGraphicPass();
+					return;
+				}
+				count++;
+			}
+			_displayCharaList.Add( DisplayCharaCheck(_novel.Name()) + _novel.CharaGraphicPass());
+		}
+
+		private string DisplayCharaCheck(string name)
+		{
+			if(name == "アルフレッド")return "Alfred/";
+			if(name == "ブレンダン")return "brendan/";
+			if(name == "ドロシア")return "dorothea/";
+			if(name == "エイブラム")return "eybram/";
+			if(name == "ヒューバート")return "hubart/";
+			if(name == "ラティスラス")return "latticelath/";	
+			if(name == "ルイス")return "lewis/";
+			if(name == "マチルダ")return "matilda/";
+			return "no name/";
+		}
+		
+
 		public void GoNext()
 		{
 			if (_commandSeq != null)
@@ -207,7 +293,19 @@ namespace Lamentationofrevenge
 			}
 			
 			if(Children.Count() > 0)RemoveScene();
+			
+			ContorolSound();
+			
+			ContorolGraphic();
+
+			if(_novel.CharaGraphicPass() != null)
+			{
+				EmotionChange();
+			}
+			
+
 			AddScene();
+			
 			if(_novel.SelectMessage() != null && _novel.IsClear() == false) 
 			{
 				AddSelect();
@@ -216,12 +314,38 @@ namespace Lamentationofrevenge
 		
 		public override void ContorolGraphic()
 		{
-			
+			if(_novel.BackGroundGraphicPass() != null)
+			{
+				if(_displayMaterialList.Count == 0)_displayMaterialList.Add(_novel.BackGroundMusicPass());
+				if(_displayMaterialList.First() != _novel.BackGroundGraphicPass())
+				{
+					_displayMaterialList[0] = _novel.BackGroundGraphicPass();
+					RemoveScene();
+					GoNext();
+				}
+			}
 		}
 		
-		public override void ContorolSound(string dataPass)
+		public override void ContorolSound( )
 		{
-			
+			if(_novel.BackGroundMusicPass() != null)
+			{
+				if(_useBgm != _novel.BackGroundMusicPass())
+				{
+					_useBgm = _novel.BackGroundMusicPass();
+					
+					_bgm = new Bgm(_folderPass[0] + _useBgm);
+
+					if(_bgmPlayer != null)_bgmPlayer.Dispose();
+
+					_bgmPlayer = _bgm.CreatePlayer();
+					
+					GoNext();
+				}
+
+				if(_bgmPlayer.Status != BgmStatus.Playing) _bgmPlayer.Play();
+				
+			}
 		}
 		
 		private void ContorolText()

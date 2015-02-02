@@ -2,19 +2,23 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Lamentationofrevenge\ADVPart.cs">
     <Files>
-      <File FileName="Lamentationofrevenge\CommandPerser.cs" Line="13" Column="4" />
-      <File FileName="Lamentationofrevenge\Novel.cs" Line="162" Column="2" />
-      <File FileName="Lamentationofrevenge\ADVPart.cs" Line="26" Column="27" />
-      <File FileName="Lamentationofrevenge\BaseScene.cs" Line="25" Column="45" />
-      <File FileName="Lamentationofrevenge\DeliveryLetter.cs" Line="126" Column="47" />
-      <File FileName="Lamentationofrevenge\AppMain.cs" Line="74" Column="5" />
+      <File FileName="Lamentationofrevenge\CommandPerser.cs" Line="36" Column="38" />
+      <File FileName="Lamentationofrevenge\Novel.cs" Line="41" Column="1" />
+      <File FileName="Lamentationofrevenge\ADVPart.cs" Line="263" Column="1" />
+      <File FileName="Lamentationofrevenge\BaseScene.cs" Line="29" Column="1" />
+      <File FileName="Lamentationofrevenge\DeliveryLetter.cs" Line="128" Column="38" />
+      <File FileName="Lamentationofrevenge\AppMain.cs" Line="72" Column="17" />
+      <File FileName="Lamentationofrevenge\TitlePart.cs" Line="44" Column="5" />
+      <File FileName="Lamentationofrevenge\data\text\TutorialText.txt" Line="13" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Lamentationofrevenge" expanded="True">
             <Node name="data" expanded="True">
-              <Node name="letter" expanded="True" />
+              <Node name="chara" expanded="True">
+                <Node name="Lewis" expanded="True" />
+              </Node>
             </Node>
             <Node name="ADVPart.cs" selected="True" />
           </Node>
@@ -26,7 +30,13 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\vantan\Documents\PSM Project\Lamentationofrevenge\Lamentationofrevenge\AppMain.cs" line="75" />
+      <Breakpoint file="C:\Users\vantan\Documents\PSM Project\Lamentationofrevenge\Lamentationofrevenge\ADVPart.cs" line="263" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="Lamentationofrevenge\ADVPart.cs" line="263" offsetX="850" offsetY="3930" expression="name" liveUpdate="False" />
+    <Watch file="Lamentationofrevenge\ADVPart.cs" line="261" offsetX="562" offsetY="3900" expression="_displayCharaList" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

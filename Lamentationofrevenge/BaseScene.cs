@@ -40,10 +40,7 @@ namespace Lamentationofrevenge
 			AddChild(sprite);
 		}
 		
-		public virtual void ContorolSound(string dataPass)
-		{
-			return;
-		}
+		public virtual void ContorolSound(){return;}
 		public virtual void ContorolGraphic(){return;}
 		public virtual void RemoveScene(){return;}
 		public virtual string NextSceneName(){return "";}

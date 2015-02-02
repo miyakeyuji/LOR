@@ -58,7 +58,7 @@ namespace Lamentationofrevenge
 		public bool IsClear(){ return _isClear; }
 		public string BackGroundMusicPass() { return _backGroundMusicPass; }
 		public string SoundEffectPass(){ return _soundEffectPass; }
-		public void TextNamePass() { Initialize( "/Application/date/TypeAlpha/" + _nextText + ".txt"); }
+		public void TextNamePass() { Initialize( "/Application/data/text/" + _nextText + ".txt"); }
 		public string MiniGameTitle(){ return _miniGameTitle; }
 		
 		public IEnumerable<object> Execute()
