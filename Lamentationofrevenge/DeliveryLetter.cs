@@ -147,6 +147,7 @@ namespace Lamentationofrevenge
 				_haveLetterId = GetRandom();
 				AddGraphic(_letterGraphicPass[_haveLetterId],_letterPosition[_selectBoxNum]);
 				AddGraphic(_checkGraphicPass[0] , _checkPosition);
+				_succesCount++;
 				return;
 			}
 			RemoveChild(Children.Last(),true);
@@ -160,7 +161,7 @@ namespace Lamentationofrevenge
 		
 		public override string TakeTextPass ()
 		{
-			return "/Application/data/text/TutorialText.txt";
+			return "/Application/data/text/TutorialText2.txt";
 		}
 		
 		private void ButtonContorol()

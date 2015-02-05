@@ -61,8 +61,8 @@ namespace Lamentationofrevenge
 		{
 			new Vector2(480,272),//背景用座標
 			new Vector2(480,200),//中央
-			new Vector2(200,200),//左
-			new Vector2(760,200),//右
+			new Vector2(180,200),//左
+			new Vector2(780,200),//右
 			new Vector2(480,110),//テキストウィンドウ用座標
 			new Vector2(200,200),//ネームウィンドウ用座標
 		};
@@ -73,7 +73,7 @@ namespace Lamentationofrevenge
 			new ImagePosition(720,300),//中央
 			new ImagePosition(720,335),//背景用座標
 			new ImagePosition(720,375),//背景用座標
-			new ImagePosition(720,2),//中央
+			new ImagePosition(720,200),//中央
 		};
 		
 		//両隣に表示させるが左右のCursorの中心点(＋－２００ずつ補正するといい感じ)
@@ -275,7 +275,7 @@ namespace Lamentationofrevenge
 			if(name == "エイブラム")return "eybram/";
 			if(name == "ヒューバート")return "hubart/";
 			if(name == "ラティスラス")return "latticelath/";	
-			if(name == "ルイス")return "lewis/";
+			if(name == "ルイス")return "Lewis/";
 			if(name == "マチルダ")return "matilda/";
 			return "no name/";
 		}

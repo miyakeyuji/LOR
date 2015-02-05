@@ -25,16 +25,16 @@ namespace Lamentationofrevenge
 		private string _takePass;
 		private string[] titleGraphicPass =
 		{
-			"/Application/data/Title/titlebackground.jpg",
-			"/Application/data/Title/titlelogo.png",
+			"/Application/data/title/titlebackground.jpg",
+			"/Application/data/title/titlelogo.png",
 		};
 
 		private string[] iconGraphicPass =
 		{
-			"/Application/data/Title/newgame.png",
-			"/Application/data/Title/load.png",
-			"/Application/data/Title/gallery.png",
-			"/Application/data/Title/option.png",
+			"/Application/data/title/newgame.png",
+			"/Application/data/title/load.png",
+			"/Application/data/title/gallery.png",
+			"/Application/data/title/option.png",
 		};
 		private Vector2[] graphicPositon =
 		{
@@ -75,7 +75,7 @@ namespace Lamentationofrevenge
 		
 		public override void ContorolSound ()
 		{
-			_bgm = new Bgm("/Application/data/Title/main_141208.mp3");
+			_bgm = new Bgm("/Application/data/title/main_141208.mp3");
 			
 			_bgmPlayer = _bgm.CreatePlayer();
 			
