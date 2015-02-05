@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Lamentationofrevenge\BaseScene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lamentationofrevenge\TitlePart.cs">
     <Files>
       <File FileName="Lamentationofrevenge\ADVPart.cs" Line="367" Column="23" />
-      <File FileName="Lamentationofrevenge\AppMain.cs" Line="105" Column="2" />
-      <File FileName="Lamentationofrevenge\TitlePart.cs" Line="96" Column="58" />
+      <File FileName="Lamentationofrevenge\AppMain.cs" Line="77" Column="34" />
+      <File FileName="Lamentationofrevenge\TitlePart.cs" Line="58" Column="3" />
       <File FileName="Lamentationofrevenge\data\text\prologue.txt" Line="18" Column="27" />
       <File FileName="Lamentationofrevenge\data\text\TutorialText.txt" Line="19" Column="23" />
-      <File FileName="Lamentationofrevenge\BaseScene.cs" Line="29" Column="1" />
+      <File FileName="Lamentationofrevenge\BaseScene.cs" Line="30" Column="30" />
       <File FileName="Lamentationofrevenge\DeliveryLetter.cs" Line="161" Column="21" />
     </Files>
     <Pads>
@@ -17,9 +17,10 @@
             <Node name="data" expanded="True">
               <Node name="bgg" expanded="True" />
               <Node name="text" expanded="True" />
-              <Node name="title" expanded="True" />
+              <Node name="title" expanded="True">
+                <Node name="titlebackground.jpg" selected="True" />
+              </Node>
             </Node>
-            <Node name="BaseScene.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -29,7 +30,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\vantan\Documents\PSM Project\LOR\Lamentationofrevenge\TitlePart.cs" line="61" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="Lamentationofrevenge\ADVPart.cs" line="263" offsetX="850" offsetY="3930" expression="name" liveUpdate="False" />

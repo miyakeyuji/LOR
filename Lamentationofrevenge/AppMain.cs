@@ -76,7 +76,8 @@ namespace Lamentationofrevenge
 		
 		public static void CheckScene()
 		{
-			if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new ADVPart(_textPass[0]);
+			if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new TitlePart();
+			//if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new ADVPart(_textPass[0]);
 			
 			if(_scene.NextSceneName() != null)
 			{
