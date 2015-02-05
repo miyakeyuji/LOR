@@ -18,22 +18,23 @@ namespace Lamentationofrevenge
 {
 	public class TitlePart : BaseScene
 	{
-				private Bgm _bgm;
+		private Bgm _bgm;
 		private BgmPlayer _bgmPlayer;
 		private string _useBgm;
 		private string _nextScene;
+		private string _takePass;
 		private string[] titleGraphicPass =
 		{
-			"/Application/date/Title/titlebackground.jpg",
-			"/Application/date/Title/titlelogo.png",
+			"/Application/data/Title/titlebackground.jpg",
+			"/Application/data/Title/titlelogo.png",
 		};
 
 		private string[] iconGraphicPass =
 		{
-			"/Application/date/Title/newgame.png",
-			"/Application/date/Title/load.png",
-			"/Application/date/Title/gallery.png",
-			"/Application/date/Title/option.png",
+			"/Application/data/Title/newgame.png",
+			"/Application/data/Title/load.png",
+			"/Application/data/Title/gallery.png",
+			"/Application/data/Title/option.png",
 		};
 		private Vector2[] graphicPositon =
 		{
@@ -47,6 +48,7 @@ namespace Lamentationofrevenge
 		
 		public TitlePart ()
 		{
+			Initialize();
 		}
 		
 		public override void AddGraphic (string dataPass, Vector2 position)
@@ -56,12 +58,61 @@ namespace Lamentationofrevenge
 		
 		public override void Initialize ()
 		{
+			for(int i = 0 ; i < titleGraphicPass.Count();i++)
+			{
+				AddGraphic(titleGraphicPass[i] , graphicPositon[i]);
+			}
+
+			for(int i = 0 ; i < iconGraphicPass.Count();i++)
+			{
+				AddGraphic(iconGraphicPass[i] , graphicPositon[i + 2]);
+			}
 			
+			ContorolSound();
+			
+			_nextScene = "";
+		}
+		
+		public override void ContorolSound ()
+		{
+			_bgm = new Bgm("/Application/data/Title/main_141208.mp3");
+			
+			_bgmPlayer = _bgm.CreatePlayer();
+			
+			_bgmPlayer.Play();
+		}
+		
+		private void ButtonContorol()
+		{
+			GamePadData data = GamePad.GetData(0);
+		
+			if(Input2.GamePad0.Start.Press)
+			{
+				
+			}
+			
+			if(Input2.GamePad0.Circle.Press || Input2.GamePad0.Up.Press)
+			{
+				_takePass = "/Application/data/text/TutorialText.txt";
+				_nextScene = "ADVPart";
+				_bgmPlayer.Dispose();
+			}
+		}
+
+		public override string NextSceneName()
+		{
+			return _nextScene;
+		}
+		
+		public override string TakeTextPass ()
+		{
+			return _takePass;
 		}
 		
 		public override void Update ()
 		{
 			base.Update ();
+			ButtonContorol();
 		}
 		
 		public override void Render ()

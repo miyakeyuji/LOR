@@ -42,8 +42,16 @@ namespace Lamentationofrevenge
 		
 		public virtual void ContorolSound(){return;}
 		public virtual void ContorolGraphic(){return;}
-		public virtual void RemoveScene(){return;}
+		public virtual void RemoveScene(int childrenNum)
+		{
+			for(int i= 0 ; i < childrenNum;i++)
+			{
+				RemoveChild(Children[0],true);
+			}
+		}
 		public virtual string NextSceneName(){return "";}
+		
+		public virtual string TakeTextPass(){return "";}
 	}
 }
 

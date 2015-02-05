@@ -212,5 +212,13 @@
     <Content Include="data\chara\Lewis\r7.png" />
     <Content Include="data\chara\Lewis\r8.png" />
     <Content Include="data\chara\Lewis\r9.png" />
+    <Content Include="data\ui\select.png" />
+    <Content Include="data\title\gallery.png" />
+    <Content Include="data\title\load.png" />
+    <Content Include="data\title\main_141208.mp3" />
+    <Content Include="data\title\newgame.png" />
+    <Content Include="data\title\option.png" />
+    <Content Include="data\title\titlebackground.jpg" />
+    <Content Include="data\title\titlelogo.png" />
   </ItemGroup>
 </Project>

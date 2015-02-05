@@ -20,6 +20,13 @@ namespace Lamentationofrevenge
 		private static BaseScene _scene;
 		private static GraphicsContext _context;
 		private static Timer _time;
+		private static string[] _textPass =
+		{
+			"/Application/data/text/TutorialText.txt",
+			"/Application/data/text/selecttest.txt",
+			"/Application/data/text/prologue.txt",
+		};
+		
 		
 		public static void Main (string[] args)
 		{
@@ -69,14 +76,16 @@ namespace Lamentationofrevenge
 		
 		public static void CheckScene()
 		{
-			if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new ADVPart();
+			if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new ADVPart(_textPass[0]);
+			
 			if(_scene.NextSceneName() != null)
 			{
-				if(_scene.NextSceneName() == "ADVPart") _scene = new ADVPart();
-				if(_scene.NextSceneName() == "DeliveryLetter") 
+				if(_scene.NextSceneName() == "ADVPart")
 				{
-					_scene = new DeliveryLetter();
+					if(_scene.TakeTextPass() != null)_scene = new ADVPart(_scene.TakeTextPass());
+					_scene = new ADVPart(_textPass[0]);
 				}
+				if(_scene.NextSceneName() == "DeliveryLetter") _scene = new DeliveryLetter();
 			}
 		}
 		

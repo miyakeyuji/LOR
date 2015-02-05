@@ -24,6 +24,7 @@ namespace Lamentationofrevenge
 		private int _succesCount;
 		private Random _rand;
 		private string _useBgm = "" ;
+		private string _nextScene;
 
 		private string[] _materialPass = 
 		{	
@@ -157,9 +158,18 @@ namespace Lamentationofrevenge
 			AddGraphic(_checkGraphicPass[1],_checkPosition);
 		}
 		
+		public override string TakeTextPass ()
+		{
+			return "/Application/data/text/TutorialText.txt";
+		}
+		
 		private void ButtonContorol()
 		{
 			GamePadData data = GamePad.GetData(0);
+			if(Input2.GamePad0.Cross.Press || Input2.GamePad0.Down.Press)
+			{
+				_nextScene = "ADVPart";
+			}
 		
 			if(Input2.GamePad0.Circle.Press || Input2.GamePad0.Up.Press)
 			{
@@ -191,6 +201,11 @@ namespace Lamentationofrevenge
 			AddGraphic(_checkGraphicPass[2],_checkPosition);
 				}
 			}
+		}
+		
+		public override string NextSceneName ()
+		{
+			return _nextScene;
 		}
 		
 		public override void Update ()

@@ -1,0 +1,5 @@
+背景,yard_even.jpg.jpg
+BGM,title.mp3
+選択肢.2,turorialへ.prologueへ.aaa
+選択肢.1,1.2
+選択肢.0,TutorialText.prologue
