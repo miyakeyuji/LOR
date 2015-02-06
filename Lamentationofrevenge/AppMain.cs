@@ -76,17 +76,22 @@ namespace Lamentationofrevenge
 		
 		public static void CheckScene()
 		{
-			if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new DeliveryLetter();
+			if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new TitlePart();
 			//if(_scene.GetType().FullName == "Lamentationofrevenge.BaseScene") _scene = new ADVPart(_textPass[0]);
 			
 			if(_scene.NextSceneName() != null)
 			{
 				if(_scene.NextSceneName() == "ADVPart")
 				{
-					if(_scene.TakeTextPass() != null)_scene = new ADVPart(_scene.TakeTextPass());
+					if(_scene.TakeTextPass() != null)
+					{
+						_scene = new ADVPart(_scene.TakeTextPass());
+						return;
+					}
 					_scene = new ADVPart(_textPass[0]);
 				}
 				if(_scene.NextSceneName() == "DeliveryLetter") _scene = new DeliveryLetter();
+				if(_scene.NextSceneName() == "TitlePart")_scene = new TitlePart();
 			}
 		}
 		

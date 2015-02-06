@@ -24,8 +24,10 @@ namespace Lamentationofrevenge
 		private string _name;
 		private string _miniGameTitle;
 		private bool _isClear;
+		private bool _isStill;
 		private string _nextText;
 		private int _selectCommandId;
+		private string _stillName;
 		
 		string[] dateType = 
 		{
@@ -41,6 +43,8 @@ namespace Lamentationofrevenge
 			var data = File.ReadAllText(datePass);
 			_commands = CommandPerser.Perse(data);
 			_isClear = false;
+			_selectCommandId = -1;
+			_selectMessages = null;
 		}
 		
 		public Novel(string datePass)
@@ -56,10 +60,12 @@ namespace Lamentationofrevenge
 		public string Message(){ return _messages; }
 		public string Name(){ return _name; }
 		public bool IsClear(){ return _isClear; }
+		public bool IsStill(){ return _isStill; }
 		public string BackGroundMusicPass() { return _backGroundMusicPass; }
 		public string SoundEffectPass(){ return _soundEffectPass; }
 		public void TextNamePass() { Initialize( "/Application/data/text/" + _nextText + ".txt"); }
 		public string MiniGameTitle(){ return _miniGameTitle; }
+		public string StillName(){return "still/" + _stillName;}
 		
 		public IEnumerable<object> Execute()
 		{
@@ -79,10 +85,11 @@ namespace Lamentationofrevenge
 			}
 			{
 				var nc = novelCommand as SelectCommand;
-				if (nc !=　null)
+				if (nc !=　null)	
 				{
-					DisplaySelect(nc); DisplaySelectId(nc);
-				} 
+					DisplaySelect(nc); 
+					DisplaySelectId(nc);
+				}
 			}
 			{
 				var nc = novelCommand as BackgroundCommand;
@@ -108,6 +115,10 @@ namespace Lamentationofrevenge
 				var nc = novelCommand as NextTextCommand;
 				if (nc !=　null) { LoadTextCommand(nc); } 
 			}
+			{
+				var nc = novelCommand as StillCommand;
+				if (nc !=　null) { DisplayStillCommand(nc); } 
+			}
 		}
 		
 		private void DisplayMessage (MessageCommand nc)
@@ -128,6 +139,15 @@ namespace Lamentationofrevenge
 		private void PlaySoundEffect (SoundEffectCommand nc){ _soundEffectPass = "se/" + nc.datePass + dateType[3]; }
 		private void ExecuteMiniGame (MiniGameCommand nc){ _miniGameTitle = nc.GameName; }		
 		private void ExecuteClearCommand(ClearCommand nc){ _isClear = true; }
+		private void DisplayStillCommand(StillCommand nc)
+		{
+			_isStill = true; 
+			_stillName = nc._stillName + dateType[0];
+			if(nc._stillName == "stillend")
+			{
+				_isStill = false;
+			}
+		}
 	}
 
 	abstract public class NovelCommand{}
@@ -188,5 +208,10 @@ namespace Lamentationofrevenge
 		public string Command{ get; private set;}
 		public string TextName{ get; private set;}
 		public NextTextCommand(string command ,string textName) { Command = command; TextName = textName;}
+	}
+	class StillCommand: NovelCommand
+	{
+		public string _stillName{ get; private set;}
+		public StillCommand(string stillName) { _stillName = stillName;}
 	}
 }	

@@ -43,8 +43,6 @@ data/letter/success.png
 data/letter/time.png
 data/letter/yazirushi.png
 data/font/GenJyuuGothic-P-Normal.ttf
-data/text/prologue.txt
-data/text/selecttest.txt
 data/text/TutorialText.txt
 data/namewindow/namewindow.png
 data/namewindow/brendan.png
@@ -141,3 +139,17 @@ data/title/newgame.png
 data/title/option.png
 data/title/titlebackground.jpg
 data/title/titlelogo.png
+data/still/Alfred1.jpg
+data/still/Alfred2.jpg
+data/still/Alfred3.jpg
+data/still/Alfred4.jpg
+data/still/Hubart1.jpg
+data/still/Lewis1.jpg
+data/still/Lewis2.jpg
+data/still/Lewis3.jpg
+data/still/Lewis4.jpg
+data/text/TutorialText2.txt
+data/text/returntitle.txt
+data/ui/leftcursol.png
+data/ui/rightcursol.png
+data/text/executeminigame.txt

@@ -122,8 +122,6 @@
     <Content Include="data\letter\time.png" />
     <Content Include="data\letter\yazirushi.png" />
     <Content Include="data\font\GenJyuuGothic-P-Normal.ttf" />
-    <Content Include="data\text\prologue.txt" />
-    <Content Include="data\text\selecttest.txt" />
     <Content Include="data\text\TutorialText.txt" />
     <Content Include="data\namewindow\namewindow.png" />
     <Content Include="data\namewindow\brendan.png" />
@@ -220,5 +218,19 @@
     <Content Include="data\title\option.png" />
     <Content Include="data\title\titlebackground.jpg" />
     <Content Include="data\title\titlelogo.png" />
+    <Content Include="data\still\Alfred1.jpg" />
+    <Content Include="data\still\Alfred2.jpg" />
+    <Content Include="data\still\Alfred3.jpg" />
+    <Content Include="data\still\Alfred4.jpg" />
+    <Content Include="data\still\Hubart1.jpg" />
+    <Content Include="data\still\Lewis1.jpg" />
+    <Content Include="data\still\Lewis2.jpg" />
+    <Content Include="data\still\Lewis3.jpg" />
+    <Content Include="data\still\Lewis4.jpg" />
+    <Content Include="data\text\TutorialText2.txt" />
+    <Content Include="data\text\returntitle.txt" />
+    <Content Include="data\ui\leftcursol.png" />
+    <Content Include="data\ui\rightcursol.png" />
+    <Content Include="data\text\executeminigame.txt" />
   </ItemGroup>
 </Project>

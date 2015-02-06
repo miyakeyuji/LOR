@@ -1,0 +1,3 @@
+背景,yard_even.jpg
+BGM,title.mp3
+ミニゲーム,TitlePart

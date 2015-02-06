@@ -25,6 +25,8 @@ namespace Lamentationofrevenge
 		private Random _rand;
 		private string _useBgm = "" ;
 		private string _nextScene;
+		private Bgm _bgm;
+		private BgmPlayer _bgmPlayer;
 
 		private string[] _materialPass = 
 		{	
@@ -114,6 +116,8 @@ namespace Lamentationofrevenge
 				AddGraphic(_boxGraphicPass,v);
 			}
 			
+			ContorolSound();
+			
 			AddGraphic(_cursolGraphicPass,_cursolPosition[_selectBoxNum]);
 			AddGraphic(_letterGraphicPass[_haveLetterId],_letterPosition[_selectBoxNum]);
 			AddGraphic(_checkGraphicPass[2],_checkPosition);
@@ -128,7 +132,16 @@ namespace Lamentationofrevenge
 		
 		public override void ContorolSound()
 		{
-			
+			_bgm = new Bgm("/Application/data/bgm/love.mp3");
+
+			if(_bgmPlayer != null)
+			{
+				_bgmPlayer.Dispose();
+			}
+
+			_bgmPlayer = _bgm.CreatePlayer();
+
+			if(_bgmPlayer.Status != BgmStatus.Playing) _bgmPlayer.Play();
 		}
 		
 		public void CheckTime()
@@ -170,6 +183,7 @@ namespace Lamentationofrevenge
 			if(Input2.GamePad0.Cross.Press || Input2.GamePad0.Down.Press)
 			{
 				_nextScene = "ADVPart";
+				_bgmPlayer.Dispose();
 			}
 		
 			if(Input2.GamePad0.Circle.Press || Input2.GamePad0.Up.Press)

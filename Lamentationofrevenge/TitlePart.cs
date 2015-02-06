@@ -75,7 +75,7 @@ namespace Lamentationofrevenge
 		
 		public override void ContorolSound ()
 		{
-			_bgm = new Bgm("/Application/data/title/main_141208.mp3");
+			_bgm = new Bgm("/Application/data/bgm/serious.mp3");
 			
 			_bgmPlayer = _bgm.CreatePlayer();
 			

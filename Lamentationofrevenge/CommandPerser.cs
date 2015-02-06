@@ -40,8 +40,8 @@ namespace Lamentationofrevenge
 			NovelCommand nc = null;
 
 			if(commandSplitText[0] == "アルフレッド" || commandSplitText[0] == "ヒューバート" || commandSplitText[0] == "ルイス" ||
-			   commandSplitText[0] == "マチルダ" || commandSplitText[0] == "エイブラム" || commandSplitText[0] == "アルフレッド" ||
-			   commandSplitText[0] == "アルフレッド")
+			   commandSplitText[0] == "マチルダ" || commandSplitText[0] == "エイブラム" || commandSplitText[0] == "ドロシア" ||
+			   commandSplitText[0] == "ブレンダン" || commandSplitText[0] == "ラティスラス")
 			{
 				nc = new MessageCommand(commandSplitText[0], messageSplitText[0] , commandSplitText[1]);
 			}
@@ -87,6 +87,10 @@ namespace Lamentationofrevenge
 			if(commandSplitText[0] == "クリア")
 			{
 				nc = new ClearCommand(messageSplitText[0]);
+			}
+			if(commaSplitText[0] == "スチル")
+			{
+				nc = new StillCommand(messageSplitText[0]);
 			}
 			
 			return nc;
