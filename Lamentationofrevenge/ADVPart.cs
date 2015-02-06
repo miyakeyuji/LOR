@@ -508,7 +508,7 @@ namespace Lamentationofrevenge
 			if(_novel.MiniGameTitle() != null)
 			{
 				_nextScene = _novel.MiniGameTitle();
-				_bgmPlayer.Dispose();
+				if(_bgmPlayer != null)_bgmPlayer.Dispose();
 			}
 			if(_novel.Message() != null && _novel.IsClear() == false)
 			{

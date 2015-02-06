@@ -1,13 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Lamentationofrevenge\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lamentationofrevenge\ADVPart.cs">
     <Files>
-      <File FileName="Lamentationofrevenge\ADVPart.cs" Line="362" Column="34" />
-      <File FileName="Lamentationofrevenge\AppMain.cs" Line="79" Column="92" />
+      <File FileName="Lamentationofrevenge\ADVPart.cs" Line="314" Column="4" />
+      <File FileName="Lamentationofrevenge\AppMain.cs" Line="90" Column="5" />
       <File FileName="Lamentationofrevenge\DeliveryLetter.cs" Line="131" Column="5" />
       <File FileName="c:\Users\vantan\Documents\PSM Project\LOR\Lamentationofrevenge\Novel.cs" Line="47" Column="27" />
       <File FileName="Lamentationofrevenge\TitlePart.cs" Line="78" Column="49" />
-      <File FileName="Lamentationofrevenge\data\text\TutorialText2.txt" Line="2" Column="27" />
+      <File FileName="Lamentationofrevenge\data\text\TutorialText2.txt" Line="36" Column="4" />
+      <File FileName="Lamentationofrevenge\data\text\executeminigame.txt" Line="1" Column="1" />
+      <File FileName="Lamentationofrevenge\data\text\returntitle.txt" Line="1" Column="1" />
+      <File FileName="c:\Users\vantan\Documents\PSM Project\LOR\Lamentationofrevenge\BaseScene.cs" Line="28" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,11 +18,12 @@
           <Node name="Lamentationofrevenge" expanded="True">
             <Node name="data" expanded="True">
               <Node name="bgm" expanded="True" />
+              <Node name="chara" expanded="True" />
               <Node name="namewindow" expanded="True" />
               <Node name="text" expanded="True" />
               <Node name="ui" expanded="True" />
             </Node>
-            <Node name="AppMain.cs" selected="True" />
+            <Node name="ADVPart.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -29,9 +33,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\vantan\Documents\PSM Project\LOR\Lamentationofrevenge\AppMain.cs" line="90" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="Lamentationofrevenge\ADVPart.cs" line="263" offsetX="850" offsetY="3930" expression="name" liveUpdate="False" />
